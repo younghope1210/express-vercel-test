@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/index.js", // `api/index.js` 파일을 서버리스 함수로 빌드
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",       // 모든 요청을
+      "dest": "/api"         // `api` 폴더의 서버리스 함수(api/index.js)로 라우팅
+    }
+  ]
+}
